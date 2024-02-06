@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->date('date_of_birth');
             $table->string('type');
-            $table->string('avatar');
+            $table->string('avatar')->nullable();
+            $table->foreignId('owner_id')->nullable()->constrained('owners');
             $table->timestamps();
         });
     }
